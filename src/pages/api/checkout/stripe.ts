@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Stripe from "stripe";
 
-// ✅ Use the default API version (let Stripe pick it)
+// Use default API version (let the SDK pick it)
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -27,5 +27,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     cancel_url: `${process.env.NEXT_PUBLIC_URL}/cancel`,
   });
 
-  return res.json({ url: session.url });
+  res.json({ url: session.url });
 }
