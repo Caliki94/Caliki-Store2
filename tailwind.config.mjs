@@ -1,0 +1,1 @@
+export default { content: ["./src/**/*.{ts,tsx}", "./styles/**/*.css"], theme: { extend: {} }, plugins: [] };
